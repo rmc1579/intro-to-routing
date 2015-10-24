@@ -3,38 +3,38 @@
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      ...  ( '/people' , {
-        templateUrl: '...',
-        controller: '...'
+      when ( '/people' , {
+        templateUrl: 'templates/list_of_people.html',
+        controller: 'PeopleListController' //angular knows how to find the name of the controller,not need to add full path to controller
     })
 
 //I have a route called people and I'm looking at 1 person, replace the ...
 
 .config(['$routeProvider',
   function($routeProvider) {
-    $...
-      ... ( '/people/:peopleId' , {
-        templateUrl: '...',
-        controller: '...'
+    $routProvider
+      .when ( '/people/:peopleId' , {
+        templateUrl: 'templates/person_details.html',
+        controller: 'PersonDetailsController'
     })
 
 //I have a route called settings with a matching controller and template, replace the ...
 
 .config(['$routeProvider',
-  function(...) {
-    ...
-      ...( '/settings' , {
-        ...: '...',
-        ...: '...'
+  function($routeProvider) {
+    $routeProvider
+      .when( '/settings' , {
+        templateUrl: 'templates/settings.html',
+        controller: 'SettingsController'
     })
 
 //I have a route called people and I'm looking at 1 person.  I also have a sub-route called activities and I'm looking at a specific activity, replace the ...
 
 
-....(['$...',
-  function(...) {
-    ....
-      ...( '/people/:peopleId/activity/:activityId' , {
-        ...,
-        ...
+.config(['$routeProvider',
+  function($routeProvider) { //called it what you want, not need to called it $routProvider 
+    $routeProvider //using $routeProvider
+      .when ( '/people/:peopleId/activity/:activityId' , {
+        templateUrl: 'templates/activity.html'
+        controller: 'ActivityController'
     })

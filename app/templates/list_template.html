@@ -1,0 +1,6 @@
+<h1>this is a list template</h1>
+
+<div ng-repeat="person in people track by $index">
+    <span ng-click="goTo($index)">{{person.name}}</span>
+</div>
+
